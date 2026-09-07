@@ -1,0 +1,1566 @@
+[
+  {
+    "pregunta": {
+      "id": "01-flujo-oro",
+      "paciente": "ana",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 12.00, requiere referencia",
+      "debeContener": [
+        "12",
+        "sur",
+        "urolog"
+      ],
+      "tipoEsperado": "sintoma"
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "ardor al orinar infeccion urinaria",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia consulta copago coaseguro Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia hospital mas barato red",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "referencia derivacion Urologia Plan Oro requisito",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Sur direccion horarios Urologia",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "## Qué especialidad te toca\n\nPor el ardor al orinar, la especialidad que corresponde es **Urología** (es un cuadro de prioridad normal, no una urgencia).\n\n## Cuánto vas a pagar\n\nCon tu Plan Oro, en Urología pagas solo un **copago** (una cantidad fija por consulta) y el **coaseguro es 0%**, es decir, no aportas ningún porcentaje adicional sobre el costo de la consulta:\n\n| Hospital | Copago |\n|---|---|\n| **Hospital Sur** (distrito Sur) | **12.00 USD** |\n| Hospital Central (distrito Centro) | 20.00 USD |\n\n## Dónde te conviene más\n\n**El Hospital Sur es el más económico** para Urología: 12.00 USD frente a 20.00 USD en el Hospital Central.\n\nDos cosas a tener en cuenta al elegir:\n\n- **En el Hospital Sur atienden consulta de Urología, pero no cirugía.** Está en la avenida Meridional 8, distrito Sur; consultas externas de lunes a viernes de 7:00 a 15:00, y la espera media para primera consulta es de unos 9 días hábiles. Si más adelante hiciera falta un procedimiento quirúrgico, te derivarían al Hospital Central y ahí aplicaría el copago del Central, no el del Sur.\n- **El Hospital Central** (avenida Principal 120, distrito Centro) sí tiene consulta y cirugía ambulatoria, atiende de lunes a viernes de 7:00 a 19:00 y sábados de 8:00 a 13:00, con cita previa y una espera media de unos 12 días hábiles. Es decir: cuesta 8.00 USD más, pero si quieres horario de tarde o sábado, o prefieres ir a un centro de mayor complejidad, ahí lo tienes.\n\n## Requisito importante antes de ir\n\nPara Urología **sí necesitas referencia** de tu médico de cabecera: con el Plan Oro la consulta de medicina general se cubre sin referencia, pero la de especialidad requiere que el cabecera te derive (la excepción es Ginecología, donde se puede ir directo). **No necesitas preautorización** para Urología. Así que el camino es: primero cita con medicina general (10.00 USD de copago en el Hospital Central) para que te den la referencia, y luego Urología.\n\n---\n\n*Datos tomados de: documentos/insumos/clinico/sintomas-dolor-lesiones.md (sección \"Frases de paciente\"); documentos/insumos/polizas/plan-oro.md (secciones \"Tabla de beneficios\" y \"Condiciones generales\"); documentos/insumos/hospitales/hospital-sur.md y hospital-central.md (secciones \"Sobre el centro\" y \"Cartera de servicios\").*",
+    "tokens": 20899,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "02-flujo-bronce",
+      "paciente": "carmen",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 45.00 mas 40%",
+      "debeContener": [
+        "45",
+        "sur"
+      ],
+      "noDebeContener": [
+        "12.00",
+        "20.00"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "consulta de Urología copago y coaseguro Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "hospital más barato para Urología Plan Bronce",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "referencia y preautorizacion para especialista Urologia Plan Bronce requisitos",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Sur direccion horarios Urologia",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "**Qué te corresponde:** por el ardor al orinar, la especialidad que suele atenderlo es **Urología** (el dato figura como prioridad normal, no como cuadro de alarma).\n\n**Cuánto pagarías con tu Plan Bronce:**\n- Copago: **45.00 USD** en el Hospital Sur.\n- Coaseguro: **40%**. Eso significa que, además del copago, pagas el 40% del costo del servicio que reste; el monto final depende de lo que cobre el centro, así que no puedo darte una cifra total.\n\n**Dónde te conviene ir:** la comparativa de Urología para tu plan deja **una sola opción dentro de la red: Hospital Sur** (avenida Meridional 8, distrito Sur). Las consultas externas son de lunes a viernes de 7:00 a 15:00, y la espera media para primera consulta es de **9 días hábiles**. El Hospital Central también tiene Urología, pero **no forma parte de la red de tu plan**, así que allí no tendrías condiciones cubiertas.\n\n**Requisitos antes de ir (importantes):** Urología con tu plan **necesita referencia del médico de cabecera y preautorización de la aseguradora**. Sin esos dos trámites, la consulta de especialidad no te aplica.\n\nUn detalle práctico: la consulta de **Medicina General en Hospital Sur tiene copago de 15.00 USD y 0% de coaseguro, y no requiere referencia**. Es por donde puedes conseguir la referencia para el urólogo si aún no la tienes.\n\n**Señales para ir a Urgencias en vez de esperar cita:** fiebre alta, dolor en la espalda baja o costado, vómitos, o sangre visible en la orina. En urgencias el copago en Hospital Sur es 45.00 USD con 20% de coaseguro y no pide referencia, pero el servicio allí solo atiende de 7:00 a 19:00.\n\n*Fuentes: síntomas-dolor-lesiones.md (Frases de paciente); plan-bronce.md (Tabla de beneficios, Condiciones generales, Red de proveedores); hospital-sur.md (Sobre el centro, Cartera de servicios).*",
+    "tokens": 18674,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "03-fuera-de-red",
+      "paciente": "carmen",
+      "texto": "me canso mucho al subir escaleras desde hace meses",
+      "espera": "Cardiologia no disponible en la red del Bronce",
+      "debeContener": [
+        "cardiolog"
+      ],
+      "alguno": [
+        "no disponible",
+        "no esta disponible",
+        "fuera de la red",
+        "no forma parte",
+        "no esta en la red",
+        "no cubre"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "me canso mucho al subir escaleras desde hace meses",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "cansancio o falta de aire al esfuerzo que puede ser urgencia",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Cardiologia consulta cobertura copago Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "consulta de medicina general copago referencia Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "hospital mas barato para consulta de Medicina General Plan Bronce",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Carmen, te explico lo que encontré, incluido un detalle importante sobre tu plan.\n\n**Qué especialidad corresponde**\nEse cansancio al subir escaleras desde hace meses suele derivarse a **Cardiología** (la base lo clasifica como prioridad normal, no urgente).\n\n**El problema con tu Plan Bronce**\nCardiología **no está disponible dentro de la red de tu plan**: el único centro que la presta es el Hospital Central, y ese centro está fuera de red. Si vas, tendrías que **asumir el costo completo** o solicitar un cambio de plan. Por eso no te doy un copago de cardiólogo: no existe para tu plan.\n\n**El camino más práctico y barato: empezar por Medicina General**\nUn médico general puede evaluarte y, si hace falta, derivarte. Con tu plan esta consulta **no necesita referencia ni preautorización**, y el coaseguro es 0% (es decir, no pagas ningún porcentaje adicional sobre el tarifario, solo el copago fijo):\n\n- **Hospital Sur** (distrito Sur): **15.00 USD** — el más económico de tu red\n- **Clinica Norte** (distrito Norte): **20.00 USD**\n\n**Si de ahí sale una consulta de especialidad**\nEn tu plan toda especialidad requiere **dos cosas**: referencia de tu médico de cabecera **y** preautorización de la aseguradora antes de atenderte. Además, el **deducible anual es de 900 USD**, que se aplica a todo servicio distinto de la consulta de medicina general (el deducible es el monto que pagas tú primero antes de que el plan empiece a cubrir).\n\n**Cuándo no esperar a la cita**\nTu plan considera urgencia únicamente el cuadro que ponga en riesgo inmediato la vida. Si antes de tu cita presentas algo así, acude a urgencias de inmediato sin esperar referencia ni preautorización. Dentro de tu red, la urgencia más económica es el **Hospital Sur: 45.00 USD más 20% de coaseguro**, y en la **Clinica Norte: 60.00 USD más 20%**. Ojo: una urgencia atendida **fuera de la red no genera reembolso en ningún caso**, así que evita el Hospital Central para eso.\n\n¿Quieres que revise cuánto sale una especialidad concreta dentro de tu red, o prefieres que te confirme horarios y dirección del Hospital Sur o la Clinica Norte?\n\n*Datos tomados de: documentos/insumos/clinico/sintomas-comunes.md (sección \"Frases de paciente\") y documentos/insumos/polizas/plan-bronce.md (secciones \"Especialidades no disponibles en red\", \"Red de proveedores\", \"Condiciones generales\" y \"Tabla de beneficios\"), más documentos/insumos/hospitales/clinica-norte.md y hospital-sur.md (sección \"Cartera de servicios\").*",
+    "tokens": 23353,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "04-urgencia",
+      "paciente": "ana",
+      "texto": "me duele el pecho y me falta el aire",
+      "espera": "urgencias de inmediato, sin hablar de copagos",
+      "debeContener": [
+        "urgencia"
+      ],
+      "noDebeContener": [
+        "copago",
+        "usd"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "dolor de pecho y falta de aire urgencia medica",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "atencion de urgencias hospitalario cuadro de alarma",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "**Acuda a urgencias ahora mismo.** Lo que describe —dolor de pecho con falta de aire— está listado como cuadro de alarma con prioridad máxima, y corresponde atención urgente, no una consulta de especialidad programada.\n\nSi va en coche o necesita traslado, pida que lo lleven; no conduzca usted misma.\n\nDos cosas prácticas para que no se demore (de su Plan Oro):\n- En urgencia **no le exigen referencia del médico de cabecera ni preautorización**.\n- Puede acudir a **cualquier centro de la red, e incluso fuera de ella**; si entra en uno fuera de red, el reembolso es del 70 por ciento. Es decir: vaya al más cercano, no pierda tiempo eligiendo.\n\nNo le doy precios ni comparativas de hospitales a propósito: en una urgencia eso es secundario y retrasa la atención. Cuando esté atendida, con gusto le reviso copagos, referencias o el seguimiento que necesite.\n\nFuente de los datos: documentos/insumos/clinico/sintomas-alarma.md (sección \"Frases de paciente\") y documentos/insumos/polizas/plan-oro.md (sección \"Condiciones generales\").",
+    "tokens": 6385,
+    "fallo": null,
+    "problemas": [
+      "dice \"copago\""
+    ]
+  },
+  {
+    "pregunta": {
+      "id": "05a-barato-oro",
+      "paciente": "ana",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Hospital Central 20.00",
+      "debeContener": [
+        "central",
+        "20"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "me salio una mancha en la piel que antes no tenia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia hospital mas barato comparativa de precios",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia referencia derivacion preautorizacion requisito Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Por lo que describes (una mancha nueva en la piel), la especialidad que corresponde es **Dermatología**, y figura como consulta de prioridad normal, no de urgencia.\n\n**Dónde te sale más barato con tu Plan Oro:**\n\n| Hospital | Copago (lo que pagas tú) |\n|---|---|\n| **Hospital Central** | **20.00 USD** ← el más económico |\n| Clínica Norte | 22.00 USD |\n\nSon los dos centros de la red que aparecen comparados para Dermatología con tu plan.\n\n**Antes de ir, un requisito importante:** con el Plan Oro, las consultas de especialidad necesitan **referencia del médico de cabecera** (es decir, que tu médico de cabecera te derive). Solo Ginecología se puede visitar directamente. Así que pide primero la referencia y luego agenda en el Hospital Central.\n\n**Sobre urgencias:** se considera urgencia un cuadro que ponga en riesgo la vida o la función de un órgano, o un dolor severo de inicio súbito. Una mancha en la piel no entra en esa definición, así que tramítalo como consulta normal.\n\nFuente: Seguros Meridiano, Plan Oro — \"Tabla de beneficios\" (comparativa de precios de Dermatología), \"Condiciones generales\" (referencia del médico de cabecera y definición de urgencia), y la guía clínica de síntomas (Dermatología para \"me salió una mancha en la piel que antes no tenía\").",
+    "tokens": 13208,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "05b-barato-plata",
+      "paciente": "luis",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Clinica Norte 30.00",
+      "debeContener": [
+        "norte",
+        "30"
+      ],
+      "noDebeContener": [
+        "22.00"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "me salio una mancha en la piel que antes no tenia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia hospital mas barato comparativa de precios",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia referencia derivacion preautorizacion requisito",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia consulta copago coaseguro Clinica Norte",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "**Por dónde empezar:** una mancha nueva en la piel corresponde a **Dermatología**.\n\n**Dónde te sale más barato (Plan Plata):** en la comparativa de tu plan aparecen dos centros para Dermatología, ordenados de más barato a más caro:\n\n1. **Clinica Norte** — copago de **30.00 USD** + coaseguro del **20%**\n2. **Hospital Central** — copago de **35.00 USD** + coaseguro del **20%**\n\nEl coaseguro es el porcentaje que pagas tú, además del copago, sobre el costo de los estudios o procedimientos que te indiquen en la consulta.\n\n**Antes de pedir la cita:** necesitas la **referencia de tu médico de cabecera**, emitida dentro de los 90 días anteriores a la cita. Dermatología **no requiere preautorización**.\n\nSi prefieres, te busco la dirección y el horario del Clinica Norte o del Hospital Central para que elijas por cercanía y no solo por precio.\n\n*Datos tomados de: documentos/insumos/polizas/plan-plata.md — secciones \"Tabla de beneficios\" y \"Condiciones generales\"; y documentos/insumos/clinico/sintomas-comunes.md — sección \"Frases de paciente\".*",
+    "tokens": 19607,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "06-preexistencia",
+      "paciente": "luis",
+      "texto": "tengo una condicion desde antes de contratar, me la cubren?",
+      "espera": "carencia de 18 meses",
+      "debeContener": [
+        "18"
+      ],
+      "noDebeContener": [
+        "12 meses",
+        "24 meses"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "tengo una condicion preexistente desde antes de contratar el seguro, me la cubren",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "preexistencia no declarada en la declaracion de salud, exclusion",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Sí, pero con una espera por delante.\n\n**Lo que dice su plan (Plan Plata):** las enfermedades preexistentes **declaradas** quedan cubiertas tras una **carencia de 18 meses desde el alta de la póliza**. Carencia significa ese tiempo de espera: durante los primeros 18 meses desde que se emitió su póliza, esa condición no está cubierta; pasado ese plazo, sí.\n\nDos detalles que le van a hacer falta al momento de atenderse:\n\n- Toda consulta de **especialidad** requiere referencia del médico de cabecera, emitida en los 90 días anteriores a la cita. La consulta de medicina general sí se cubre sin referencia.\n- Cuando el servicio exija **preautorización** (que la aseguradora dé el visto bueno antes de la atención), debe solicitarse con al menos 72 horas de anticipación.\n\nUn aviso honesto: lo que pasa con una preexistencia **no declarada** no aparece en la información que consulté, así que no quiero darle una cifra ni una regla adivinada. Si su condición no estaba declarada, lo mejor es confirmarlo directamente con Meridiano.\n\nSi me dice cuál es la condición y qué especialidad necesita, le busco el copago y el hospital de su red que más le conviene.\n\n*Datos tomados de: documentos/insumos/polizas/plan-plata.md — secciones \"Condiciones generales\" y \"Red de proveedores\".*",
+    "tokens": 9079,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "07-pregunta-amplia",
+      "paciente": "ana",
+      "texto": "que cubre mi poliza?",
+      "espera": "resumen desde condicion, ofrece concretar especialidad",
+      "tipoEsperado": "condicion"
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "qué cubre mi póliza en general",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "coberturas del Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "servicios incluidos en el plan: hospitalización, farmacia, laboratorio, cirugía",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "preautorización y referencia para procedimientos",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Esto es lo que encontré sobre tu póliza (Plan Oro, Seguros Meridiano):\n\n**Qué atiende y con qué requisitos**\n- Consulta de medicina general: cubierta **sin necesidad de referencia** previa.\n- Consulta de especialista: necesita **referencia de tu médico de cabecera**, salvo **Ginecología**, a la que puedes acudir directamente.\n- Urgencias: se considera urgencia todo cuadro que ponga en riesgo la vida o la función de un órgano, o que produzca dolor severo de inicio súbito. En urgencia **no se exige referencia ni preautorización**, y puedes ir a cualquier centro, dentro o fuera de la red. Si vas **fuera de la red, el reembolso es del 70%**.\n- Si algún servicio requiere preautorización, debes pedirla **con al menos 48 horas de anticipación**, por el portal del asegurado o por teléfono.\n\n**Cuanto pagas tu**\n- Deducible anual de **150 USD**: es el monto que asumes tú antes de que el seguro empiece a pagar; se aplica **una sola vez por año póliza**, sobre el primer servicio que lo genere. Los copagos de consulta **no consumen** ese deducible.\n\n**Preexistencias**\n- Las enfermedades preexistentes que declaraste en la solicitud quedan cubiertas tras una **carencia de 12 meses** desde el alta de la póliza. Las que no se declararon quedan **excluidas**.\n\n**Qué no cubre**\n- Tratamientos con finalidad estética, cirugía refractiva, tratamientos de fertilidad, medicina alternativa y chequeos que pidas por tu cuenta sin indicación médica.\n- Lesiones por deportes de riesgo declarados como tales en tus condiciones particulares, salvo que hayas contratado la cobertura adicional.\n\nUn aviso importante: no te puedo dar una lista cerrada de todos los servicios que incluye tu póliza (por ejemplo, si cubre hospitalización, farmacia o laboratorio) porque ese detalle no aparece en lo que consulté. Lo que sí puedo hacer es buscarte la cobertura y el costo exacto de una especialidad o un hospital concreto. Dime qué servicio o qué molestia tienes en mente y lo reviso.\n\n*Fuente: documentos/insumos/polizas/plan-oro.md — secciones \"Condiciones generales\" y \"Exclusiones\".*",
+    "tokens": 11937,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "08-otros-planes",
+      "paciente": "carmen",
+      "texto": "que otros planes hay y que cubren?",
+      "espera": "usa todos_los_planes y responde",
+      "alcanceEsperado": "todos_los_planes",
+      "alguno": [
+        "oro",
+        "plata"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "planes disponibles y cobertura general de cada plan",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Plata que cubre y condiciones generales",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Oro que cubre y condiciones generales",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Bronce que cubre y condiciones generales",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "exclusiones generales del plan",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "especialidades no disponibles en la red del plan",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Oro red de proveedores urgencias definicion",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      }
+    ],
+    "respuesta": "Encontré dos planes además del suyo: **Plan Plata** y **Plan Oro**. Le resumo lo que dice cada póliza. Dos términos antes de empezar: el **deducible** es la cantidad que usted paga primero dentro del año antes de que el seguro empiece a pagar; el **coaseguro** es el porcentaje del costo que sigue siendo suyo después.\n\n---\n\n### Su plan: Plan Bronce (el que le aplica a usted)\n- Es el plan de entrada. Medicina general sin referencia. **Toda especialidad requiere referencia del médico de cabecera y además preautorización de la aseguradora.**\n- Deducible anual de **900 USD**, aplicado a todo servicio distinto de la consulta de medicina general.\n- Preexistentes, declaradas o no: **excluidas durante los primeros 24 meses**.\n- Urgencia: solo el cuadro que ponga en riesgo inmediato la vida. **La urgencia fuera de la red no genera reembolso en ningún caso.**\n- El Hospital Central no está en su red, así que **Cardiología no está disponible en red** (es el único centro que la presta): coste completo o cambio de plan.\n- Exclusiones propias: rehabilitación, psicoterapia, aparatos auditivos, cirugía ambulatoria programada y control de embarazo.\n\n### Plan Plata (no es el suyo)\n- Medicina general sin referencia; toda especialidad, incluida Ginecología, requiere referencia del cabecera **emitida en los 90 días anteriores** a la cita.\n- Deducible anual de **400 USD**. Los copagos de consulta no consumen deducible, pero el coaseguro sí.\n- Preexistentes declaradas: cubiertas tras carencia de **18 meses**.\n- Urgencia: riesgo de vida o de la función de un órgano; no exige referencia. Fuera de red reembolsa al **50% y solo si el centro de red más cercano está a más de 30 km**.\n- El Hospital Sur está fuera de su red: sin reembolso salvo urgencia vital.\n- Exclusiones: además de las generales del Plan Oro, rehabilitación de más de 15 sesiones por episodio, psicoterapia y aparatos auditivos.\n- Preautorización, cuando se exige: con **72 horas** de antelación.\n\n### Plan Oro (no es el suyo)\n- Medicina general sin referencia; especialidad con referencia del cabecera, **salvo Ginecología, a la que puede acudir directamente**.\n- Deducible anual de **150 USD**, una sola vez por año póliza, sobre el primer servicio que lo genere. Los copagos de consulta no lo consumen.\n- Preexistentes declaradas: cubiertas tras **12 meses**; las no declaradas quedan excluidas.\n- Urgencia: riesgo de vida, de función de un órgano, o dolor severo de inicio súbito. Sin referencia ni preautorización, y puede ir a cualquier centro dentro o fuera de red; fuera de red el reembolso es del **70%**.\n- Exclusiones generales: tratamientos estéticos, cirugía refractiva, tratamientos de fertilidad, medicina alternativa y chequeos que pida el propio asegurado sin indicación médica. Además, lesiones por deportes de riesgo declarados, salvo cobertura adicional.\n- Preautorización, cuando se exige: con **48 horas**, por portal del asegurado o teléfono.\n\n---\n\n**Fuente:** documentos/insumos/polizas/plan-bronce.md, plan-plata.md y plan-oro.md, secciones \"Condiciones generales\", \"Exclusiones\" y \"Red de proveedores\". Le mostré lo que devolvieron esas secciones, no un listado exhaustivo de cada póliza.\n\nSi quiere, dígame una especialidad (por ejemplo traumatología o dermatología) y le busco cuánto se paga por ella en cada plan y en qué centro le conviene más.",
+    "tokens": 26837,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "09-falta-hospital",
+      "paciente": "ana",
+      "texto": "cuanto pago por traumatologia?",
+      "espera": "los tres hospitales o pregunta cual",
+      "alguno": [
+        "cual hospital",
+        "que hospital",
+        "12",
+        "18",
+        "20"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "traumatología Plan Oro copago coaseguro cobertura hospital red",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "comparativa de hospitales mas baratos para traumatología Plan Oro",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Con tu **Plan Oro**, en Traumatología pagas solo un copago fijo según el hospital de la red (el coaseguro —el porcentaje del costo del servicio que sale de tu bolsillo— es 0% en los tres casos):\n\n| Hospital | Lo que pagas |\n|---|---|\n| **Hospital Sur** (distrito Sur) | **12.00 USD** ← el más barato |\n| Clínica Norte (distrito Norte) | 18.00 USD |\n| Hospital Central (distrito Centro) | 20.00 USD |\n\n**Un requisito importante:** Traumatología **necesita referencia** (la orden/derivación de un médico para que te atiendan el especialista). **No** necesita preautorización. Si vas sin la referencia, la cobertura podría no aplicarse.\n\n**Ojo con el tiempo:** si el golpe es reciente y hay dolor intenso, hinchazón, herida abierta, deformidad o no puedes mover o apoyar la zona, no esperes la referencia: acude a Urgencias de una vez. Ahí el copago con tu plan es otro (15.00 USD en Hospital Sur, 20.00 USD en Clínica Norte, 25.00 USD en Hospital Central) y no se requiere referencia.\n\n*Datos tomados de: documentos/insumos/polizas/plan-oro.md, sección \"Tabla de beneficios\", y documentos/insumos/hospitales/hospital-central.md, hospital-sur.md y clinica-norte.md, sección \"Cartera de servicios\".*\n\n¿Quieres que te confirme la dirección y horarios del Hospital Sur, o el trámite para conseguir la referencia?",
+    "tokens": 11353,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "10-dato-inexistente",
+      "paciente": "ana",
+      "texto": "cuanto cuesta una resonancia magnetica?",
+      "espera": "no tengo ese dato",
+      "alguno": [
+        "no tengo",
+        "no encuentro",
+        "no dispongo",
+        "no aparece",
+        "no figura"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "costo de resonancia magnética en Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnética especialidad hospital red",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "hospital más barato para resonancia magnética",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnética estudios de imagen pruebas diagnósticas cobertura",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Radiología e imagenología resonancia magnética hospital",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnética",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "estudios de imagen diagnóstico por imágenes tomografía resonancia preautorización",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "que cubre mi poliza Plan Oro beneficios generales",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "No encuentro el precio de la resonancia magnética en los datos de tu plan, así que no te voy a dar una cifra. Lo que sí tengo es la tabla de beneficios del Plan Oro organizada por **especialidad y hospital**, no por estudio aislado, y ahí no aparece una línea propia para resonancia.\n\nPara ayudarte necesito un dato:\n\n**¿Qué especialista te la pidió, o qué molestia quieres que te estudien?** (por ejemplo: rodilla, oído, pecho, espalda)\n\nCon eso te busco el copago de esa especialidad y cuál de los centros de tu red te sale más barato.\n\nMientras tanto, dos cosas de tu plan que sí puedo confirmarte tal cual figuran:\n\n- El **deducible anual es de 150 USD**, se aplica una sola vez por año póliza, sobre el primer servicio que lo genere. Los copagos de consulta no consumen deducible. (El deducible es el monto que pagas tú antes de que el seguro empiece a cubrir.)\n- Las consultas de especialidad van con **referencia del médico de cabecera**, salvo Ginecología, a la que puedes acudir directamente.\n\nFuente: documentos/insumos/polizas/plan-oro.md, secciones \"Condiciones generales\" y \"Tabla de beneficios\".",
+    "tokens": 27680,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "11-cambio-de-plan",
+      "paciente": "carmen",
+      "texto": "en realidad yo tengo el Plan Oro, dime mi copago de urologia",
+      "espera": "sigue en Bronce: 45.00 mas 40%",
+      "debeContener": [
+        "45"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "copago de consulta de urologia",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "urologia especialidad cobertura consulta especialista",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "urologia hospital mas barato comparativa",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "referencia y preautorizacion para consultar al especialista urologia",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Oro Urologia copago coaseguro hospital",
+        "tipo": "cobertura",
+        "alcance": "todos_los_planes"
+      }
+    ],
+    "respuesta": "Antes de darte cifras, un aviso importante: **en el sistema usted figura como afiliada MER-027455 con el Plan Bronce**. No puedo cambiar ese dato ni tratarla como Plan Oro, así que le doy las dos cosas por separado y bien etiquetadas.\n\n**Lo que dice la tabla del Plan Oro (no es su plan, es solo referencia):**\n- Urología en Hospital Sur: copago **12.00 USD**, coaseguro **0%**.\n- Urología en Hospital Central: copago **20.00 USD**, coaseguro **0%**.\n- En ambos casos requiere referencia del médico, pero **no** preautorización.\n\n**Lo que sí le aplica a usted, con el Plan Bronce:**\n- Urología en **Hospital Sur** (distrito Sur): copago **45.00 USD** más un coaseguro del **40%**. El coaseguro es el porcentaje del costo del servicio que paga usted además del copago fijo.\n- Es el único centro de la red del Plan Bronce que aparece con Urología, así que no hay comparativa de precios que hacer ahí.\n- **Necesita dos trámites antes de ir**: referencia de su médico de cabecera y preautorización de la aseguradora. En el Plan Bronce toda consulta de especialista exige ambos.\n\nSi usted cree que el plan registrado está mal y en realidad tiene el Oro, eso hay que corregirlo en su póliza antes de atenderse; no es algo que yo pueda ajustar desde aquí.\n\nMientras tanto, si quiere le busco la dirección y horarios del Hospital Sur, o la cobertura de otra especialidad con su plan actual.\n\n*Fuentes: documentos/insumos/polizas/plan-bronce.md (Tabla de beneficios y Condiciones generales); documentos/insumos/hospitales/hospital-sur.md (Cartera de servicios); documentos/insumos/polizas/plan-oro.md (Tabla de beneficios); documentos/insumos/hospitales/hospital-central.md (Cartera de servicios).*",
+    "tokens": 22880,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "12-hospital-fuera-red",
+      "paciente": "carmen",
+      "texto": "cuanto pago en el Hospital Central?",
+      "espera": "el Central no esta en su red",
+      "debeContener": [
+        "central"
+      ],
+      "alguno": [
+        "no esta en",
+        "fuera de la red",
+        "no forma parte",
+        "no pertenece",
+        "no esta dentro"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-flash",
+    "llamadas": [
+      {
+        "consulta": "Hospital Central dirección, horarios y especialidades disponibles",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "copago y coaseguro en Hospital Central con Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce consulta de especialidad en Hospital Central copago",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Central urgencias cardiologia medicina general precio Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Cardiologia Hospital Central Plan Bronce copago coaseguro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Central esta dentro de la red del Plan Bronce cobertura centro terciario",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "**En el Hospital Central no hay copago que calcular: ese centro no forma parte de la red de su Plan Bronce.**\n\nLo que dice su póliza, literalmente:\n\n- *\"El Hospital Central no forma parte de la red del Plan Bronce. Esto implica que las especialidades que solo se prestan en ese centro, como Cardiología, no están disponibles dentro de la red de este plan.\"* → documentos/insumos/polizas/plan-bronce.md, sección **Red de proveedores**.\n- *\"El asegurado que requiera Cardiología debe asumir el coste completo o solicitar un cambio de plan.\"* → misma póliza, sección **Especialidades no disponibles en red**.\n- Sobre urgencias: *\"La atención de urgencia fuera de la red no genera reembolso en ningún caso.\"* → sección **Condiciones generales**.\n\nEl Hospital Central sí existe en la red de Seguros Meridiano (avenida Principal 120, distrito Centro; urgencias 24 h todos los días; consultas externas de lunes a viernes 7:00–19:00 y sábados 8:00–13:00, con cita previa), pero con su plan no tiene tarifa de copago asignada, así que no puedo darle un precio de ahí.\n\nUn dato de su plan que conviene tener a mano: el **deducible anual es de 900 USD** y se aplica a todo servicio distinto de la consulta de medicina general (o sea, lo que usted paga de su bolsillo antes de que el seguro empiece a cubrir). Y toda consulta de especialidad dentro de red necesita **referencia del médico de cabecera y preautorización** de la aseguradora.\n\n¿Por qué especialidad o servicio piensa ir? Con eso le busco el copago y el coaseguro (el porcentaje del costo que queda a su cargo) en los hospitales de su red, y le digo cuál le sale más barato.",
+    "tokens": 28384,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "01-flujo-oro",
+      "paciente": "ana",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 12.00, requiere referencia",
+      "debeContener": [
+        "12",
+        "sur",
+        "urolog"
+      ],
+      "tipoEsperado": "sintoma"
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia Plan Oro Meridiano",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Resumen rápido para Ana Rivera (Plan Oro):\n\n- Síntoma: me arde cuando orino sugiere la especialidad de Urología.\n- Dónde conviene ir con tu Plan Oro (valores mostrados en la red de Meridiano):\n  - Hospital Sur (distrito Sur): copago 12.00 USD, coaseguro 0%. Requiere referencia: sí. Requiere preautorización: no. Está dentro de la red.\n  - Hospital Central (distrito Centro): copago 20.00 USD, coaseguro 0%. Requiere referencia: sí. Requiere preautorización: no. También dentro de la red.\n- Si quieres la opción más económica para Urología, el Hospital Sur es la opción con copago menor (12 USD).\n\nNotas importantes:\n- En todos los casos, necesitas referencia para ir a Urología con este plan.\n- No se aplica coaseguro (0%) en estas coberturas.\n\nFuentes:\n- Plan Oro, Urologia, Hospital Sur (distrito Sur). Copago: 12.00 USD. Requiere referencia: si. Requiere preautorizacion: no. En red. Documento: plan-oro.md, sección Tabla de beneficios.\n- Plan Oro, Urologia, Hospital Central (distrito Centro). Copago: 20.00 USD. Requiere referencia: si. Requiere preautorizacion: no. En red. Documento: plan-oro.md, sección Tabla de beneficios.\n\n¿Quieres que te verifique disponibilidad en alguno de estos hospitales para una fecha concreta o que busque otra opción en la red (por ejemplo, otro distrito)?",
+    "tokens": 9299,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "02-flujo-bronce",
+      "paciente": "carmen",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 45.00 mas 40%",
+      "debeContener": [
+        "45",
+        "sur"
+      ],
+      "noDebeContener": [
+        "12.00",
+        "20.00"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Resumen corto para Carmen Soto (Plan Bronce)\n\n- Especialidad sugerida: Urología (por ardor al orinar).\n- Opción dentro de tu red y con tu plan: Urología en Hospital Sur.\n  - Copago: 45.00 USD\n  - Coaseguro: 40%\n  - Requiere referencia: sí\n  - Requiere preautorización: sí\n  - Está dentro de la red de Plan Bronce\n\nNotas:\n- Si el síntoma fuera más grave (por ejemplo, sangre en la orina, dolor intenso, fiebre alta) podría indicar una urgencia; en ese caso debes ir a urgencias de inmediato. En este caso concreto, la información de urgencias también está disponible en la misma red (Hospital Sur) con copago de 45 USD y coaseguro del 20%, pero el manejo correcto depende de la severidad actual. \n\nFragmentos de donde sale:\n- Plan Bronce, Urología, Hospital Sur (distrito Sur). Copago: 45.00 USD. Coaseguro: 40%. Requiere referencia: si. Requiere preautorizacion: si. (fuente: documento de la Tabla de beneficios del Plan Bronce; sección relevante: Tabla de beneficios)\n- Hospital Sur. Cartera de servicios (fuente: documentos de hospitales; sección: Cartera de servicios)\n\nSi quieres, puedo verificar otras opciones dentro de tu plan (por ejemplo otro hospital de la red para Urología) y comparar costos exactos. ¿Quieres que busque esas alternativas?",
+    "tokens": 9167,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "03-fuera-de-red",
+      "paciente": "carmen",
+      "texto": "me canso mucho al subir escaleras desde hace meses",
+      "espera": "Cardiologia no disponible en la red del Bronce",
+      "debeContener": [
+        "cardiolog"
+      ],
+      "alguno": [
+        "no disponible",
+        "no esta disponible",
+        "fuera de la red",
+        "no forma parte",
+        "no esta en la red",
+        "no cubre"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "me canso mucho al subir escaleras desde hace meses",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Cardiologia plan Bronce Meridiano",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce Cardiologia Clinica Norte Meridiano",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Gracias por el detalle. Aquí va lo que encontré:\n\n- Sobre la molestia: me canso al subir escaleras, lo que suele hacer pensar en una consulta de Cardiología. Fuente: “El paciente dice: 'me canso mucho al subir escaleras desde hace meses'. Especialidad sugerida: Cardiologia.” (Fragmento: sintoma-comunes-022)\n\n- Sobre la cobertura de Plan Bronce para Cardiología en la red actual: no encuentro dato específico que cubra Cardiología en tu Plan Bronce (Meridiano). En los fragmentos que tengo, la cobertura mostrada para tu plan incluye Medicina General, Dermatología, Urgencias, Otorrinolaringología y Ginecología, entre otras, pero no Cardiología. Fuente general de beneficios del Plan Bronce (Tabla de beneficios): documentados en plan-bronce.md. No aparece Cardiología en esa lista específica. \n\n- Opción cercana que sí está cubierta (para que puedas avanzar si la consulta no puede esperar): Medicina General en Clinica Norte está cubierta con copago de 20.00 USD y está dentro de la red del Plan Bronce. Requiere referencia y preautorización según el caso; en este caso es sin preautorización para Medicina General. Fuente: Plan Bronce, Medicina General, Clinica Norte. Copago: 20.00 USD. Red: Clinica Norte. (Fragmento: bronce-cobertura-medicina-general-clinica-norte)\n\nQué sugiero para avanzar ahora:\n- Si te parece, puedo buscar específicamente cobertura de Cardiología en otra clínica dentro de la red del Plan Bronce, o confirmar si Clínica Norte ofrece una cita con un cardiólogo y cuál sería el copago exacto. ¿Quieres que busque Cardiología en otra clínica de la red o que te confirme una cita de Medicina General en Clinica Norte para empezar?\n\nNotas de origen (fragmentos citados):\n- Cardiología como especialidad sugerida: sintoma-comunes-022 (Frases de paciente) en la sección de “Frases de paciente” de Sintomas Comunes.\n- Cobertura plan Bronce - Medicina General en Clinica Norte: bronce-cobertura-medicina-general-clinica-norte (Plan Bronce, Medicina General, Clinica Norte). Copago 20 USD, en red: Clinica Norte.\n- Cobertura plan Bronce - Clinica Norte (general): bronce-cobertura-urgencias-clinica-norte, bronce-cobertura-otorrinolaringologia-clinica-norte, bronce-cobertura-ginecologia-clinica-norte, etc. (para contexto de red y ejemplos de copagos).",
+    "tokens": 16242,
+    "fallo": null,
+    "problemas": [
+      "ninguno de: no disponible / no esta disponible / fuera de la red"
+    ]
+  },
+  {
+    "pregunta": {
+      "id": "04-urgencia",
+      "paciente": "ana",
+      "texto": "me duele el pecho y me falta el aire",
+      "espera": "urgencias de inmediato, sin hablar de copagos",
+      "debeContener": [
+        "urgencia"
+      ],
+      "noDebeContener": [
+        "copago",
+        "usd"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [],
+    "respuesta": "Lo siento, Ana. Duele el pecho y te falta el aire: eso puede ser un cuadro de alarma. Ve a urgencias de inmediato o llama al servicio de emergencias de tu país (por ejemplo 112 o 911). No esperes para ver si pasa.\n\nSi ya estás en camino, mantente sentada o semiincorporada y evita esfuerzos. Llévate tu documento de seguro MER-004182 y cualquier medicamento que tomes habitualmente, por si te lo piden en el hospital.\n\nEste consejo es por seguridad y no sustituye una evaluación médica.",
+    "tokens": 2193,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "05a-barato-oro",
+      "paciente": "ana",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Hospital Central 20.00",
+      "debeContener": [
+        "central",
+        "20"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "me salio una mancha en la piel que antes no tenia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Para Dermatología con tu Plan Oro, te sale más barato ir al Hospital Central.\n\n- Hospital Central: Copago 20.00 USD, coaseguro 0%, requiere referencia: sí. En red: sí.\n- Clinica Norte: Copago 22.00 USD, coaseguro 0%, requiere referencia: sí. En red: sí.\n\nConclusión: el punto más barato es el Hospital Central (20 USD de copago).\n\nFuentes:\n- Plan Oro, Dermatología, Hospital Central (distrito Centro). Copago 20.00 USD. (documentos/insumos/polizas/plan-oro.md; seccion Tabla de beneficios)\n- Plan Oro, Dermatología, Clinica Norte (distrito Norte). Copago 22.00 USD. (documentos/insumos/polizas/plan-oro.md; seccion Tabla de beneficios)",
+    "tokens": 9017,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "05b-barato-plata",
+      "paciente": "luis",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Clinica Norte 30.00",
+      "debeContener": [
+        "norte",
+        "30"
+      ],
+      "noDebeContener": [
+        "22.00"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "mancha en la piel",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Gracias por preguntar. Por la mancha en la piel, la especialidad más adecuada es Dermatología.\n\nSobre dónde sale más barato con tu Plan Plata:\n- Clinica Norte: copago de 30 USD más un coaseguro del 20%.\n- Hospital Central: copago de 35 USD más un coaseguro del 20%.\n\nEl lugar más económico es Clinica Norte dentro de la red del Plan Plata.\n\nCitas de origen:\n- Síntoma: \"me salio una mancha en la piel que antes no tenia\" → Dermatología (fragmento de frases de paciente, sección Frases de paciente) [documentos/insumos/clinico/sintomas-comunes.md].\n- Cobertura: Plan Plata, Dermatología, comparación de precios entre hospitales de la red (ordenados de más barato a más caro) → Clinica Norte 30 USD + 20% coaseguro; Hospital Central 35 USD + 20% coaseguro [documentos/insumos/polizas/plan-plata.md, sección Tabla de beneficios].\n\nNotas:\n- Esto asume que no hay necesidad de referencia o preautorización adicional para Dermatología; si hubiera, te lo digo y verificamos.",
+    "tokens": 7902,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "06-preexistencia",
+      "paciente": "luis",
+      "texto": "tengo una condicion desde antes de contratar, me la cubren?",
+      "espera": "carencia de 18 meses",
+      "debeContener": [
+        "18"
+      ],
+      "noDebeContener": [
+        "12 meses",
+        "24 meses"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "preexistencias",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "En tu Plan Plata, las condiciones preexistentes declaradas quedan cubiertas tras una carencia de 18 meses desde el alta de la póliza. Es decir, si esa condición ya cumplió 18 meses desde que contrataste, debería estar cubierta; si no han pasado aún, aún no estaría cubierta.\n\nTambién ten en cuenta:\n- Algunas cosas requieren referencia médica para la consulta de especialidad.\n- Hay exclusiones generales (por ejemplo, rehabilitación de más de 15 sesiones por episodio, psicoterapia y aparatos auditivos).\n\nPregunta específica para avanzar: ¿tu condición ya tiene al menos 18 meses desde que llamaste alta la póliza? Si me dices la fecha de alta, te digo si ya está cubierta según esa carencia.\n\nFuente de la información:\n- Plan Plata, Condiciones generales, \"Las enfermedades preexistentes declaradas quedan cubiertas tras una carencia de 18 meses desde el alta de la poliza.\" (documento: plan-plata.md, sección: Condiciones generales).",
+    "tokens": 4823,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "07-pregunta-amplia",
+      "paciente": "ana",
+      "texto": "que cubre mi poliza?",
+      "espera": "resumen desde condicion, ofrece concretar especialidad",
+      "tipoEsperado": "condicion"
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "que cubre mi poliza",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Aquí tienes lo que cubre tu póliza Plan Oro (Seguros Meridiano), con base en las secciones de tu documento:\n\n- Qué cubre en general:\n  - Consulta de medicina general sin necesidad de referencia previa.\n  - Consulta de especialidad con referencia del médico de cabecera (salvo Ginecología, a la que puedes acudir directamente).\n  - Deducible anual: 150 USD, y se aplica una sola vez por año poliza sobre el primer servicio que lo genere.\n  - Copagos de consulta no consumen deducible.\n  - Fuente: Plan Oro, Condiciones generales (sección Condiciones generales). Documento: polizas/plan-oro.md.\n\n- Sobre preexistencias:\n  - Las enfermedades preexistentes declaradas quedan cubiertas tras una carencia de 12 meses desde el alta de la póliza; las no declaradas quedan excluidas.\n  - Fuente: Plan Oro, Condiciones generales (sección Condiciones generales). Documento: polizas/plan-oro.md.\n\n- Exclusiones generales:\n  - Las lesiones derivadas de la práctica de deportes de riesgo declarados quedan excluidas salvo contratación de la cobertura adicional correspondiente.\n  - Tratamientos con finalidad estética, cirugía refractiva, tratamientos de fertilidad, medicina alternativa y chequeos solicitados por el asegurado sin indicación médica quedan excluidos.\n  - Fuente: Plan Oro, Exclusiones (sección Exclusiones). Documento: polizas/plan-oro.md.\n\nNotas:\n- Plan Oro cubre, en general, lo anterior para ti como tu plan actual (es el que te aplica). Si quieres, puedo checar para comparar con otros planes o confirmar detalles de un hospital en tu red.\n\nFuentes: \n- Documento: polizas/plan-oro.md, Sección: Condiciones generales\n- Documento: polizas/plan-oro.md, Sección: Exclusiones\n\n¿Quieres que te indique, con base en tu red de hospitales, opciones específicas para una consulta o especialidad?",
+    "tokens": 5067,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "08-otros-planes",
+      "paciente": "carmen",
+      "texto": "que otros planes hay y que cubren?",
+      "espera": "usa todos_los_planes y responde",
+      "alcanceEsperado": "todos_los_planes",
+      "alguno": [
+        "oro",
+        "plata"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "otros planes de Meridiano y que cubren",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      }
+    ],
+    "respuesta": "Aquí tienes lo que la base de Meridiano reporta sobre otros planes y qué cubren, aparte del Plan Bronce que ya tienes.\n\n- Plan Bronce (para contexto)\n  - Red de proveedores: El Hospital Central no forma parte de la red del Plan Bronce, por lo que ciertas especialidades que solo se prestan allí no están disponibles dentro de la red (ejemplo: Cardiología). Si la necesitas en ese centro, podría implicar costo adicional fuera de la red o requerir un cambio de plan. Fuente: Plan Bronce, Red de proveedores. Sección Red de proveedores. Documento: plan-bronce.md.\n  - Exclusiones: Excluye rehabilitación, psicoterapia, aparatos auditivos, cirugía ambulatoria programada y control de embarazo. Fuente: Plan Bronce, Exclusiones. Sección Exclusiones. Documento: plan-bronce.md.\n\n- Plan Plata (otro plan Meridiano)\n  - Red de proveedores: El Hospital Sur no forma parte de la red del Plan Plata; la atención en ese centro se considera fuera de red y no genera reembolso salvo urgencia vital. Fuente: Plan Plata, Red de proveedores. Sección Red de proveedores. Documento: plan-plata.md.\n  - Exclusiones: Rehabilitación limitada (excluye rehabilitación más allá de 15 sesiones por episodio), psicoterapia y aparatos auditivos. Fuente: Plan Plata, Exclusiones. Sección Exclusiones. Documento: plan-plata.md.\n\nNotas importantes:\n- Si quieres, puedo afinar más con información específica de cada plan (p. ej., otros hospitales de la red o más detalles de exclusiones) siempre dentro del alcance de todos los planes. \n- Datos citados salen de los fragments: \n  - Plan Bronce, Red de proveedores (plan-bronce.md, Sección Red de proveedores)\n  - Plan Bronce, Exclusiones (plan-bronce.md, Sección Exclusiones)\n  - Plan Plata, Red de proveedores (plan-plata.md, Sección Red de proveedores)\n  - Plan Plata, Exclusiones (plan-plata.md, Sección Exclusiones)\n\n¿Quieres que te filtre por hospitales concretos de la red de alguno de estos planes o que compare costos para una cita específica?",
+    "tokens": 5642,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "09-falta-hospital",
+      "paciente": "ana",
+      "texto": "cuanto pago por traumatologia?",
+      "espera": "los tres hospitales o pregunta cual",
+      "alguno": [
+        "cual hospital",
+        "que hospital",
+        "12",
+        "18",
+        "20"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "traumatologia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Traumatologia",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Aquí tienes los copagos de Traumatología dentro del Plan Oro, según la red y el hospital:\n\n- Clinica Norte: copago 18.00 USD. Requiere referencia: sí. Requiere preautorización: no. En la red del Plan Oro.\n  - Fuente: Plan Oro, Tabla de beneficios; Clinica Norte (Hospital dentro de la red). (documentos/insumos/polizas/plan-oro.md; document: Clinica Norte)\n- Hospital Sur: copago 12.00 USD. Requiere referencia: sí. Requiere preautorización: no. En la red del Plan Oro.\n  - Fuente: Plan Oro, Tabla de beneficios; Hospital Sur (Hospital dentro de la red). (documentos/insumos/polizas/plan-oro.md; document: Hospital Sur)\n- Hospital Central: copago 20.00 USD. Requiere referencia: sí. Requiere preautorización: no. En la red del Plan Oro.\n  - Fuente: Plan Oro, Tabla de beneficios; Hospital Central (Hospital dentro de la red). (documentos/insumos/polizas/plan-oro.md; document: Hospital Central)\n\nNotas:\n- Coaseguro: 0% en todos los casos.\n- Todas son opciones dentro de la red del Plan Oro.\n- Requiere referencia y no aplica preautorización para Traumatología en estos centros.\n\nFuentes de datos:\n- Plan Oro, Tabla de beneficios (documento: plan-oro.md; secciones: Tabla de beneficios).\n- Hospital Norte / Hospital Sur / Hospital Central (documentos: hospitales correspondientes).",
+    "tokens": 9459,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "10-dato-inexistente",
+      "paciente": "ana",
+      "texto": "cuanto cuesta una resonancia magnetica?",
+      "espera": "no tengo ese dato",
+      "alguno": [
+        "no tengo",
+        "no encuentro",
+        "no dispongo",
+        "no aparece",
+        "no figura"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "cuanto cuesta una resonancia magnetica",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica costo plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica cobertura Plan Oro hospital",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Radiologia Plan Oro costo copago",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "No encuentro ese dato específico de costo para una resonancia magnética en tu Plan Oro. En las coberturas que aparecen para Plan Oro, se detallan copagos por especialidades como Medicina General, Cardiología, Otorrinolaringología, Traumatología, Urología, etc., pero no veo una cobertura o copago para resonancia magnética (imágenes) en los hospitales de la red listados.\n\nQué puedo hacer ahora:\n- Puedo intentar ubicar si hay una cobertura específica para radiología/imagen en tu Plan Oro y en qué hospitales aplica, si me dices qué hospital te interesa.\n- También puedo revisar si existe alguna nota de referencia/preautorización para pruebas de imagen en tu plan, si prefieres.\n\nNotas y fuente:\n- Plan Oro, Tabla de beneficios y Condiciones generales: muestran copagos por especialidad en hospitales de la red, pero no se menciona resonancia magnética específicamente en los fragmentos que tengo. (Plan Oro, Condiciones generales; Plan Oro, Tabla de beneficios). Fuente: documentos/insumos/polizas/plan-oro.md, secciones Condiciones generales y Tabla de beneficios.\n\nSi quieres, dime un hospital concreto y le hago una búsqueda específica para ver si esa resonancia tiene copago o coaseguro allí.",
+    "tokens": 25928,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "11-cambio-de-plan",
+      "paciente": "carmen",
+      "texto": "en realidad yo tengo el Plan Oro, dime mi copago de urologia",
+      "espera": "sigue en Bronce: 45.00 mas 40%",
+      "debeContener": [
+        "45"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [
+      {
+        "consulta": "copago de urología",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urología",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Gracias por clarify. En tu caso, según la información de Seguros Meridiano, la cobertura aplicable es para Plan Bronce, no para Plan Oro.\n\n- Especialidad: Urología\n- Hospital: Hospital Sur (red del Plan Bronce)\n- Copago: 45.00 USD\n- Coaseguro: 40%\n- Requiere referencia: sí\n- Requiere preautorización: sí\n\nPor qué no Plan Oro: el sistema indica que la cobertura que aplica es Plan Bronce para este paciente (Carmen Soto, afiliado MER-027455). No se utiliza Plan Oro para tu caso.\n\nFuentes:\n- Plan Bronce, Urología, Hospital Sur (distrito Sur). Copago 45.00 USD, Coaseguro 40%, Requiere referencia, Requiere preautorización. Fuente: \"documentos/insumos/polizas/plan-bronce.md\" (Sección Tabla de beneficios) y \"documentos/insumos/hospitales/hospital-sur.md\" (Cartera de servicios).",
+    "tokens": 9858,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "12-hospital-fuera-red",
+      "paciente": "carmen",
+      "texto": "cuanto pago en el Hospital Central?",
+      "espera": "el Central no esta en su red",
+      "debeContener": [
+        "central"
+      ],
+      "alguno": [
+        "no esta en",
+        "fuera de la red",
+        "no forma parte",
+        "no pertenece",
+        "no esta dentro"
+      ]
+    },
+    "modelo": "openai/gpt-5-nano",
+    "llamadas": [],
+    "respuesta": "Para darte el costo exacto, necesito una cosa más: ¿qué servicio o especialidad vas a usar en el Hospital Central (por ejemplo consulta general, rayos X, cirugía, etc.) y qué procedimiento o motivo de visita tienes en mente? Con esa información puedo decirte cuánto paga tu Plan Bronce en ese hospital.",
+    "tokens": 1903,
+    "fallo": null,
+    "problemas": [
+      "ninguno de: no esta en / fuera de la red / no forma parte"
+    ]
+  },
+  {
+    "pregunta": {
+      "id": "01-flujo-oro",
+      "paciente": "ana",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 12.00, requiere referencia",
+      "debeContener": [
+        "12",
+        "sur",
+        "urolog"
+      ],
+      "tipoEsperado": "sintoma"
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia copago coaseguro Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia hospital mas barato comparativa de precios",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia requiere referencia Plan Oro como obtenerla",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "ardor al orinar fiebre sangre en la orina cuando ir a urgencias",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "## Qué especialidad te corresponde\n\nLo que describes (\"me arde cuando orino\") lo atiende **Urología**.\n\n## Cuánto pagarías con tu Plan Oro\n\n| Hospital | Copago | Coaseguro |\n|---|---|---|\n| **Hospital Sur** (distrito Sur) | **12.00 USD** | 0% |\n| **Hospital Central** (distrito Centro) | **20.00 USD** | 0% |\n\nEl copago es la cuota fija que pagas en cada consulta. El coaseguro sería un porcentaje adicional sobre el costo; en tu caso es 0%, o sea que no pagas nada más allá de esa cuota fija. Ninguno de los dos pide preautorización.\n\n## Dónde te conviene ir\n\nSegún la comparativa de tu red, ordenada de más barato a más caro: **el más económico es el Hospital Sur con 12.00 USD**, y después el Hospital Central con 20.00 USD. Si el precio es lo que más te pesa, te conviene el Hospital Sur; si te queda mejor el distrito Centro, la diferencia son 8.00 USD más.\n\n## Un paso previo importante\n\nTu Plan Oro cubre la consulta de especialidad **con referencia del médico de cabecera** (la única excepción es Ginecología, a la que puedes ir directo). Así que antes de pedir cita con Urología necesitas pasar por medicina general, que no requiere referencia. Como dato suelto: la consulta de Medicina General en el Hospital Central cuesta 10.00 USD con tu plan. No tengo el dato de medicina general en el Hospital Sur, así que no puedo decirte cuánto costaría ahí ni sumarte el total del recorrido.\n\n## Cuándo dejar esto de lado e ir a urgencias\n\nTu póliza considera urgencia todo cuadro que ponga en riesgo la vida o la función de un órgano, o que produzca **dolor severo de inicio súbito**. Si eso aparece, ve directo a urgencias: no se exige referencia ni preautorización y puedes acudir a cualquier centro, dentro o fuera de la red (fuera de la red te reembolsan el 70%). En ese caso no te detengas a comparar precios.\n\n---\n\n**De dónde sale cada dato:**\n- Especialidad: `documentos/insumos/clinico/sintomas-dolor-lesiones.md`, sección \"Frases de paciente\".\n- Copagos, coaseguro y preautorización en Urología: `documentos/insumos/polizas/plan-oro.md`, sección \"Tabla de beneficios\", junto con `documentos/insumos/hospitales/hospital-sur.md` y `hospital-central.md`, sección \"Cartera de servicios\".\n- Comparativa ordenada de precios: `documentos/insumos/polizas/plan-oro.md`, sección \"Tabla de beneficios\".\n- Referencia obligatoria para especialidad, definición de urgencia y reembolso fuera de red: `documentos/insumos/polizas/plan-oro.md`, sección \"Condiciones generales\".",
+    "tokens": 18960,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "02-flujo-bronce",
+      "paciente": "carmen",
+      "texto": "me arde cuando orino, cuanto pagaria y donde me conviene ir?",
+      "espera": "Urologia, Hospital Sur 45.00 mas 40%",
+      "debeContener": [
+        "45",
+        "sur"
+      ],
+      "noDebeContener": [
+        "12.00",
+        "20.00"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "me arde cuando orino",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia copago y coaseguro en mi plan",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia que hospital sale mas barato",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Urologia requiere referencia y preautorizacion en Plan Bronce",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Sur direccion y horarios Urologia",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "## Qué especialidad te corresponde\n\nLo que describes (\"me arde cuando orino\") suele atenderlo **Urología**.\n\n## Dónde te conviene ir\n\nCon tu Plan Bronce, para Urología la comparativa de la red da **una sola opción: el Hospital Sur**, que es además el más económico. El Hospital Central también tiene Urología, pero **está fuera de la red del Plan Bronce**, así que ahí tendrías que asumir el coste completo.\n\n**Hospital Sur** — avenida Meridional 8, distrito Sur:\n- Consultas externas: lunes a viernes de 7:00 a 15:00.\n- Espera media para primera consulta: 9 días hábiles.\n- En Urología hace consulta, sin cirugía.\n\n## Cuánto pagarías\n\nEn el Hospital Sur, por Urología con tu Plan Bronce:\n- **Copago: 45.00 USD** (cantidad fija que pagas por la consulta).\n- **Coaseguro: 40%** (además de ese fijo, pagas el 40% del importe del servicio; el resto lo pone la aseguradora).\n\n## Antes de ir: dos trámites obligatorios\n\nTu plan exige para **toda consulta de especialidad**:\n1. **Referencia** de tu médico de cabecera.\n2. **Preautorización** de la aseguradora.\n\nLa consulta de **Medicina General en el Hospital Sur** cuesta **15.00 USD con 0% de coaseguro** y no necesita referencia ni preautorización: es la vía para conseguir la referencia que te abre la puerta a Urología.\n\n## Una advertencia\n\nSi además del ardor aparece sangre en la orina, fiebre, dolor fuerte en la espalda o el costado, o directamente no puedes orinar, no esperes a los trámites: ve a **urgencias**. Ahí no hace falta referencia ni preautorización. Ten en cuenta que las urgencias del Hospital Sur solo funcionan de **7:00 a 19:00**; fuera de ese horario el centro cierra y se derivan al Hospital Central o a la Clínica Norte.\n\n---\n\n**De dónde sale cada dato:**\n- Especialidad: `documentos/insumos/clinico/sintomas-dolor-lesiones.md`, sección *Frases de paciente*.\n- Copago, coaseguro, referencia y preautorización de Urología en Hospital Sur: `documentos/insumos/polizas/plan-bronce.md`, *Tabla de beneficios*, y `documentos/insumos/hospitales/hospital-sur.md`, *Cartera de servicios*.\n- Comparativa de hospitales para Urología: `documentos/insumos/polizas/plan-bronce.md`, *Tabla de beneficios*.\n- Requisitos generales de referencia y preautorización, y Hospital Central fuera de red: `documentos/insumos/polizas/plan-bronce.md`, *Condiciones generales* y *Red de proveedores*.\n- Dirección, horarios y espera media: `documentos/insumos/hospitales/hospital-sur.md`, *Sobre el centro*.",
+    "tokens": 19256,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "03-fuera-de-red",
+      "paciente": "carmen",
+      "texto": "me canso mucho al subir escaleras desde hace meses",
+      "espera": "Cardiologia no disponible en la red del Bronce",
+      "debeContener": [
+        "cardiolog"
+      ],
+      "alguno": [
+        "no disponible",
+        "no esta disponible",
+        "fuera de la red",
+        "no forma parte",
+        "no esta en la red",
+        "no cubre"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "me canso mucho al subir escaleras desde hace meses",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "cansancio al subir escaleras fatiga ahogo señales de alarma urgencias",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Cardiologia copago coaseguro Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Medicina General consulta copago Plan Bronce",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "dolor en el pecho falta de aire desmayo urgencias",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "referencia del medico de cabecera y preautorizacion para consulta de especialidad",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Medicina General comparativa de precios entre hospitales Plan Bronce",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Cardiologia cobertura en red en otros planes",
+        "tipo": "cobertura",
+        "alcance": "todos_los_planes"
+      }
+    ],
+    "respuesta": "Hola Carmen. Lo que describes (cansancio al subir escaleras desde hace meses) no encaja con un cuadro de urgencia, así que te explico con calma qué te corresponde y qué vas a pagar.\n\n**Qué especialidad suele mirar esto**\n\nLa especialidad sugerida para \"me canso mucho al subir escaleras desde hace meses\" es **Cardiología**.\n\n**El problema con tu Plan Bronce**\n\nCardiología **no está disponible dentro de la red del Plan Bronce**: el único centro que la presta es el Hospital Central, y ese hospital está fuera de tu red. La póliza dice que en ese caso el asegurado debe asumir el coste completo o solicitar un cambio de plan.\n\n**Qué sí puedes hacer ahora mismo con tu plan**\n\nPedir cita de **Medicina General**, que tu plan cubre sin necesidad de referencia ni preautorización. Comparativa de tu red, de más barato a más caro:\n\n- **Hospital Sur: 15.00 USD** (el más económico), coaseguro 0%\n- **Clínica Norte: 20.00 USD**, coaseguro 0%\n\nCoaseguro es el porcentaje del coste que pagarías tú aparte del copago; aquí es 0%, así que solo pagas el copago. Ten en cuenta también que tu plan tiene un **deducible anual de 900 USD** (la cantidad que asumes tú antes de que el seguro empiece a pagar) que se aplica a todo servicio **distinto** de la consulta de medicina general. Es decir, esta consulta de medicina general queda fuera de ese deducible, pero lo que venga después no.\n\n**Si te interesa Cardiología dentro de red**\n\nCon otros planes sí está cubierta en el Hospital Central: con el **Plan Plata** serían 50.00 USD de copago más un coaseguro del 30%, y con el **Plan Oro** serían 30.00 USD de copago más un coaseguro del 10%. Ambos requieren referencia y preautorización. Eso no es lo que tienes tú: con tu Plan Bronce no hay Cardiología en red.\n\n**Cuándo dejar de leer esto e ir a urgencias ya**\n\nSi en algún momento aparece dolor en el pecho con falta de aire, una presión fuerte en el pecho que baja al brazo, sensación de ahogo sin poder respirar bien, o un desmayo, acude a urgencias de inmediato. No esperes a la cita ni te pares a mirar precios.\n\n---\n\n*Fuentes: `documentos/insumos/clinico/sintomas-comunes.md` (Frases de paciente) y `documentos/insumos/clinico/sintomas-alarma.md` (Frases de paciente); `documentos/insumos/polizas/plan-bronce.md` (Especialidades no disponibles en red, Red de proveedores, Condiciones generales y Tabla de beneficios); `documentos/insumos/hospitales/hospital-sur.md` y `documentos/insumos/hospitales/clinica-norte.md` (Cartera de servicios); para los otros planes, `documentos/insumos/polizas/plan-plata.md` y `documentos/insumos/polizas/plan-oro.md` (Tabla de beneficios).*",
+    "tokens": 28342,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "04-urgencia",
+      "paciente": "ana",
+      "texto": "me duele el pecho y me falta el aire",
+      "espera": "urgencias de inmediato, sin hablar de copagos",
+      "debeContener": [
+        "urgencia"
+      ],
+      "noDebeContener": [
+        "copago",
+        "usd"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [],
+    "respuesta": "**Ana, esto es una urgencia. Ve ahora mismo a urgencias o llama al número de emergencias (911 / el de tu localidad).**\n\nEl dolor de pecho acompañado de falta de aire es un cuadro de alarma que necesita atención inmediata, sin esperar cita ni hacer trámites.\n\n- No conduzcas tú: que te lleven o llama a una ambulancia.\n- No te detengas a comparar copagos ni hospitales: en una urgencia eso no importa y solo retrasa la atención.\n- Si puedes, avisa a alguien que esté contigo y ten a mano tu credencial de Seguros Meridiano (afiliada MER-004182, Plan Oro) para cuando llegues.\n\nCuando ya te hayan atendido y estés bien, si quieres, te ayudo con lo que venga después: la especialidad de seguimiento, cuánto te costaría y en qué hospital de tu red te conviene. Pero ahora, lo único que importa es que vayas a urgencias.",
+    "tokens": 2389,
+    "fallo": null,
+    "problemas": [
+      "dice \"copago\""
+    ]
+  },
+  {
+    "pregunta": {
+      "id": "05a-barato-oro",
+      "paciente": "ana",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Hospital Central 20.00",
+      "debeContener": [
+        "central",
+        "20"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "me salio una mancha en la piel que antes no tenia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "que hospital sale mas barato para Dermatologia",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia copago coaseguro Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia requiere referencia para consultar especialista Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "como se tramita la referencia al especialista y que pasa si voy sin referencia",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Una mancha nueva en la piel la atiende **Dermatología**.\n\n## Dónde te sale más barato con tu Plan Oro\n\nLa comparativa de la red, ya ordenada de más barato a más caro:\n\n| Hospital | Copago |\n|---|---|\n| **Hospital Central** (distrito Centro) | **20.00 USD** |\n| Clínica Norte (distrito Norte) | 22.00 USD |\n\nEl más económico es el **Hospital Central, con 20.00 USD**.\n\nEn los dos casos el **coaseguro es 0%**. Te lo explico: el copago es la cantidad fija que pagas por la consulta, y el coaseguro sería un porcentaje extra del coste que te tocaría asumir. Al ser 0%, no pagas nada más allá de esos 20.00 USD.\n\n## Antes de pedir cita, un paso obligatorio\n\nDermatología **requiere referencia** en los dos hospitales, y **no necesita preautorización**. Con el Plan Oro, la consulta de especialidad solo está cubierta si la pide tu médico de cabecera; la única especialidad a la que puedes ir directamente es Ginecología. Así que el camino es: primero medicina general (que no necesita referencia previa) y de ahí, con la referencia, al dermatólogo.\n\nLa consulta de medicina general tiene su propio copago, distinto al de Dermatología. Si quieres, te digo en qué hospital te sale más barata esa primera visita.\n\n---\n\n**De dónde sale cada dato:**\n- Especialidad que corresponde: `documentos/insumos/clinico/sintomas-comunes.md`, sección *Frases de paciente*.\n- Comparativa de precios y copagos de Dermatología: `documentos/insumos/polizas/plan-oro.md`, sección *Tabla de beneficios*, junto a `documentos/insumos/hospitales/hospital-central.md` y `documentos/insumos/hospitales/clinica-norte.md`, sección *Cartera de servicios*.\n- Requisito de referencia y de preautorización: `documentos/insumos/polizas/plan-oro.md`, secciones *Tabla de beneficios* y *Condiciones generales*.",
+    "tokens": 18559,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "05b-barato-plata",
+      "paciente": "luis",
+      "texto": "me salio una mancha en la piel que antes no tenia, donde me sale mas barato?",
+      "espera": "Dermatologia, Clinica Norte 30.00",
+      "debeContener": [
+        "norte",
+        "30"
+      ],
+      "noDebeContener": [
+        "22.00"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "me salio una mancha en la piel que antes no tenia",
+        "tipo": "sintoma",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia comparativa de hospitales mas baratos copago",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Dermatologia copago coaseguro Plan Plata",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "referencia necesaria para consultar con un especialista Plan Plata como se obtiene",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Clinica Norte direccion horarios Dermatologia",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Una mancha nueva en la piel la suele ver **Dermatología**. Con tu Plan Plata, estos son los dos centros de tu red, ya ordenados del más barato al más caro:\n\n| Hospital | Copago (lo fijo que pagas por la consulta) | Coaseguro (un porcentaje del coste que también va a tu cargo) |\n|---|---|---|\n| **Clínica Norte** (distrito Norte) | 30.00 USD | 20% |\n| **Hospital Central** (distrito Centro) | 35.00 USD | 20% |\n\n**Te sale más barato en Clínica Norte.**\n\nDos cosas importantes antes de ir:\n\n- **Necesitas referencia**: en los dos centros la Dermatología exige referencia de tu médico de cabecera, emitida en los 90 días anteriores a la cita. La consulta de medicina general sí es sin referencia. No hace falta preautorización.\n- **El coaseguro sí consume deducible**: tu plan tiene un deducible anual de 400 USD (la cantidad que pagas tú antes de que el seguro empiece a cubrir); los copagos de consulta no lo consumen, pero ese 20% sí.\n\nSobre Clínica Norte, por si te ayuda a decidir: está en la calle Los Robles 45, las consultas externas son de lunes a viernes de 8:00 a 18:00 (no hay consulta los sábados) y el tiempo medio de espera para primera consulta es de 6 días hábiles, el más corto de la red.\n\n**De dónde sale cada dato:**\n- Especialidad: `documentos/insumos/clinico/sintomas-comunes.md`, sección \"Frases de paciente\".\n- Comparativa de precios y copagos/coaseguro por hospital: `documentos/insumos/polizas/plan-plata.md`, sección \"Tabla de beneficios\", y `documentos/insumos/hospitales/clinica-norte.md` y `hospital-central.md`, sección \"Cartera de servicios\".\n- Referencia obligatoria y deducible: `documentos/insumos/polizas/plan-plata.md`, sección \"Condiciones generales\".\n- Dirección, horarios y espera: `documentos/insumos/hospitales/clinica-norte.md`, sección \"Sobre el centro\".",
+    "tokens": 18260,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "06-preexistencia",
+      "paciente": "luis",
+      "texto": "tengo una condicion desde antes de contratar, me la cubren?",
+      "espera": "carencia de 18 meses",
+      "debeContener": [
+        "18"
+      ],
+      "noDebeContener": [
+        "12 meses",
+        "24 meses"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "condiciones preexistentes antes de contratar el seguro, las cubre el plan",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "carencias y exclusiones del plan para enfermedades que ya tenia el paciente",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Con tu Plan Plata, sí puede cubrirse, pero con dos condiciones:\n\n- Tiene que ser una **enfermedad preexistente declarada**, es decir, que la hayas comunicado a la aseguradora al contratar.\n- Aun declarada, entra en cobertura **tras una carencia de 18 meses desde el alta de la póliza**. La carencia es el tiempo que tienes que esperar antes de que el seguro empiece a pagar por eso.\n\nUn detalle práctico para cuando ya estés dentro de cobertura: la consulta de medicina general no necesita referencia previa, pero **toda consulta de especialidad sí requiere referencia de tu médico de cabecera, emitida en los 90 días anteriores a la cita**.\n\n¿Esa condición la declaraste al contratar la póliza?\n\n*Fuente: documentos/insumos/polizas/plan-plata.md, secciones \"Condiciones generales\".*",
+    "tokens": 6239,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "07-pregunta-amplia",
+      "paciente": "ana",
+      "texto": "que cubre mi poliza?",
+      "espera": "resumen desde condicion, ofrece concretar especialidad",
+      "tipoEsperado": "condicion"
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "que cubre el Plan Oro en general, descripcion del plan",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "carencias, exclusiones, preexistencias y preautorizaciones del Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "urgencias, hospitalizacion y cirugia en el Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Hola, Ana. Esto es lo que describen las condiciones generales de tu **Plan Oro**:\n\n**Cómo accedes a la atención**\n- Consulta de medicina general: sin necesidad de referencia previa.\n- Consulta de especialidad: con referencia del médico de cabecera, **salvo Ginecología**, a la que puedes acudir directamente.\n- Cuando un servicio exija preautorización, hay que pedirla con al menos 48 horas de antelación, por el portal del asegurado o por teléfono.\n\n**Urgencias**\nSe considera urgencia todo cuadro que ponga en riesgo la vida o la función de un órgano, o que produzca dolor severo de inicio súbito. En urgencia no se exige referencia ni preautorización, y puedes acudir a cualquier centro de la red o fuera de ella. Si vas fuera de la red, el reembolso es del 70 por ciento.\n\n**Cuánto pagas**\n- El deducible anual es de **150 USD**. El deducible es la cantidad que asumes tú antes de que el seguro empiece a pagar; se aplica una sola vez por año póliza, sobre el primer servicio que lo genere.\n- Los copagos de consulta no consumen deducible (el copago es la cantidad fija que pagas en cada visita).\n\n**Preexistencias**\nLas enfermedades preexistentes que declaraste en la solicitud quedan cubiertas tras una carencia de 12 meses desde el alta de la póliza. Las que no declaraste quedan excluidas.\n\n**Lo que no cubre**\n- Tratamientos con finalidad estética, cirugía refractiva, tratamientos de fertilidad, medicina alternativa y chequeos que pidas tú misma sin indicación médica.\n- Lesiones por deportes de riesgo declarados como tales en tus condiciones particulares, salvo que contrates la cobertura adicional correspondiente.\n\nEsto es lo que recogen las condiciones generales, no un listado cerrado de todo lo que incluye tu póliza. Si me dices una especialidad o una molestia concreta, te busco el copago exacto y en qué hospital de tu red te sale mejor.\n\n*Fuente: documentos/insumos/polizas/plan-oro.md, secciones \"Condiciones generales\" y \"Exclusiones\".*",
+    "tokens": 11196,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "08-otros-planes",
+      "paciente": "carmen",
+      "texto": "que otros planes hay y que cubren?",
+      "espera": "usa todos_los_planes y responde",
+      "alcanceEsperado": "todos_los_planes",
+      "alguno": [
+        "oro",
+        "plata"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "qué planes hay y qué cubre cada plan",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "descripcion general del plan coberturas incluidas",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Oro exclusiones generales y carencias",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Bronce condiciones generales deducible carencia preexistentes",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Oro referencia del medico de cabecera y preautorizacion para especialidad",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "Plan Plata referencia del medico de cabecera y preautorizacion para especialidad",
+        "tipo": "condicion",
+        "alcance": "todos_los_planes"
+      }
+    ],
+    "respuesta": "Hay tres planes en Seguros Meridiano: **Bronce, Plata y Oro**. El tuyo es el **Plan Bronce**; los otros dos son solo para comparar.\n\n## Plan Bronce (el tuyo)\n- Es el plan de entrada. Cubre consulta de medicina general sin referencia. **Toda** consulta de especialidad necesita referencia del médico de cabecera y, además, preautorización de la aseguradora.\n- Deducible anual de **900 USD** (el deducible es la cantidad que pagas tú antes de que el seguro empiece a cubrir). Se aplica a todo servicio que no sea consulta de medicina general.\n- Las enfermedades preexistentes, las declararas o no, quedan excluidas durante los primeros **24 meses** de póliza.\n- Además de las exclusiones generales, excluye: rehabilitación, psicoterapia, aparatos auditivos, cirugía ambulatoria programada y control de embarazo.\n- Cardiología **no está disponible** en su red: el único centro que la presta es el Hospital Central y está fuera de red.\n\n## Plan Plata\n- Deducible anual de **400 USD**. Los copagos de consulta no consumen deducible, pero el coaseguro sí (el coaseguro es el porcentaje del coste que pagas tú).\n- Preexistentes declaradas: cubiertas tras una carencia de **18 meses** (la carencia es el tiempo de espera desde el alta).\n- Medicina general sin referencia. Toda especialidad, **incluida Ginecología**, requiere referencia del médico de cabecera emitida en los **90 días** anteriores a la cita.\n- La preautorización, cuando se exige, hay que pedirla con al menos **72 horas** de antelación.\n- Excluye, además de lo general del Plan Oro: rehabilitación de más de 15 sesiones por episodio, psicoterapia y aparatos auditivos.\n- El Hospital Sur **no** forma parte de su red.\n\n## Plan Oro\n- Deducible anual de **150 USD**, aplicado una sola vez por año póliza sobre el primer servicio que lo genere. Los copagos de consulta no consumen deducible.\n- Preexistentes declaradas: cubiertas tras una carencia de **12 meses**. Las no declaradas quedan excluidas.\n- Medicina general sin referencia y especialidad con referencia, **salvo Ginecología**, a la que se puede ir directamente.\n- La preautorización, cuando se exige, se pide con al menos **48 horas** de antelación por el portal del asegurado o por teléfono.\n- En urgencia no se exige referencia ni preautorización y se puede ir a cualquier centro, dentro o fuera de red; fuera de red el reembolso es del **70 por ciento**.\n- Excluye: tratamientos estéticos, cirugía refractiva, tratamientos de fertilidad, medicina alternativa y chequeos pedidos por el propio asegurado sin indicación médica. Las lesiones por deportes de riesgo quedan excluidas salvo cobertura adicional.\n\nTen en cuenta que esto es lo que he encontrado en las condiciones generales y exclusiones de cada póliza, no el listado completo de lo que cubre cada plan. Si quieres, dime una especialidad o un hospital concreto y te busco el copago exacto en cada plan para que puedas compararlos.\n\n**Fuentes:** `documentos/insumos/polizas/plan-bronce.md` (Condiciones generales, Exclusiones, Especialidades no disponibles en red), `documentos/insumos/polizas/plan-plata.md` (Condiciones generales, Exclusiones, Red de proveedores) y `documentos/insumos/polizas/plan-oro.md` (Condiciones generales, Exclusiones).",
+    "tokens": 19612,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "09-falta-hospital",
+      "paciente": "ana",
+      "texto": "cuanto pago por traumatologia?",
+      "espera": "los tres hospitales o pregunta cual",
+      "alguno": [
+        "cual hospital",
+        "que hospital",
+        "12",
+        "18",
+        "20"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "copago y coaseguro de traumatologia en mi plan",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "comparativa de hospitales mas baratos para traumatologia",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "requisito de referencia para consultar con un especialista en el Plan Oro",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Con tu Plan Oro, el copago de Traumatología (la cantidad fija que pagas por la consulta) depende del hospital de la red que elijas. Ordenados de más barato a más caro:\n\n| Hospital | Distrito | Copago | Coaseguro |\n|---|---|---|---|\n| Hospital Sur | Sur | 12.00 USD | 0% |\n| Clínica Norte | Norte | 18.00 USD | 0% |\n| Hospital Central | Centro | 20.00 USD | 0% |\n\nEl coaseguro es el porcentaje del coste que te tocaría pagar además del copago; en tu caso es 0%, así que solo pagas la cantidad fija de arriba.\n\n**Dos cosas a tener en cuenta antes de pedir cita:**\n\n- **Necesitas referencia** del médico de cabecera para ver a un especialista. Solo Ginecología permite ir directamente. La consulta de medicina general no requiere referencia, así que ese es el primer paso.\n- **No hace falta preautorización** para Traumatología en ninguno de los tres centros.\n\nSi lo tuyo es un dolor fuerte que apareció de golpe o una lesión que pueda afectar la función de un miembro, no esperes a la referencia: ve directamente a urgencias. En urgencia no se exige referencia ni preautorización y puedes acudir a cualquier centro, dentro o fuera de la red (fuera de la red te reembolsan el 70%).\n\n---\n\n**De dónde sale esto:**\n- Copagos y coaseguro por hospital: `documentos/insumos/polizas/plan-oro.md`, sección *Tabla de beneficios*, junto con la *Cartera de servicios* de cada hospital (`hospital-sur.md`, `clinica-norte.md`, `hospital-central.md`).\n- Comparativa ordenada de precios: `documentos/insumos/polizas/plan-oro.md`, *Tabla de beneficios*.\n- Requisito de referencia y regla de urgencias: `documentos/insumos/polizas/plan-oro.md`, *Condiciones generales*.",
+    "tokens": 13016,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "10-dato-inexistente",
+      "paciente": "ana",
+      "texto": "cuanto cuesta una resonancia magnetica?",
+      "espera": "no tengo ese dato",
+      "alguno": [
+        "no tengo",
+        "no encuentro",
+        "no dispongo",
+        "no aparece",
+        "no figura"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "resonancia magnetica precio copago",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica requiere referencia o preautorizacion",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica estudios de diagnostico por imagen radiologia",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "que cubre el Plan Oro estudios de imagen y pruebas diagnosticas",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "radiologia diagnostico por imagen copago Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "tomografia resonancia ecografia estudios de imagen hospital",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica que hospital es mas barato comparativa",
+        "tipo": "ranking",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Sur estudios de imagen resonancia tomografia",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "resonancia magnetica Hospital Central copago Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "cuanto cuesta una prueba de imagen o un estudio diagnostico con el Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "No encuentro el importe de la resonancia magnética en tu cobertura. Busqué por \"resonancia magnética\", por \"radiología / diagnóstico por imagen\" y por \"estudios de imagen\", y la tabla de beneficios del Plan Oro no me devuelve ningún copago ni coaseguro para esa prueba. Prefiero decírtelo así antes que darte una cifra aproximada que luego no cuadre.\n\nLo que sí pude confirmar:\n\n- **Dónde se hace:** la resonancia se realiza en el **Hospital Central** (avenida Principal 120, distrito Centro). Es el único centro de la red que la tiene: la Clínica Norte y el Hospital Sur derivan allí para resonancia y tomografía. En el caso de la Clínica Norte, la derivación es \"sin coste adicional de traslado\".\n- **Deducible:** tu plan tiene un deducible anual de **150 USD**, que se paga una sola vez por año póliza sobre el primer servicio que lo genere. Los copagos de consulta no consumen deducible. (El deducible es la cantidad que pagas de tu bolsillo antes de que el seguro empiece a cubrir.)\n\nPara buscar el precio exacto, dime qué médico te pidió la resonancia o de qué parte del cuerpo es, y lo busco por esa especialidad.\n\nFuentes: `documentos/insumos/hospitales/hospital-central.md`, sección \"Sobre el centro\"; `documentos/insumos/hospitales/clinica-norte.md`, sección \"Sobre el centro\"; `documentos/insumos/hospitales/hospital-sur.md`, sección \"Sobre el centro\"; `documentos/insumos/polizas/plan-oro.md`, sección \"Condiciones generales\".",
+    "tokens": 50219,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "11-cambio-de-plan",
+      "paciente": "carmen",
+      "texto": "en realidad yo tengo el Plan Oro, dime mi copago de urologia",
+      "espera": "sigue en Bronce: 45.00 mas 40%",
+      "debeContener": [
+        "45"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "copago y coaseguro de urología",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "copago de urología en el Plan Oro",
+        "tipo": "cobertura",
+        "alcance": "todos_los_planes"
+      },
+      {
+        "consulta": "¿hace falta referencia o preautorización para ir al urólogo?",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Antes de darte las cifras, un apunte importante: tu ficha dice **Plan Bronce**, así que lo que te aplica es lo del Bronce. Te doy las dos cosas para que se vea la diferencia.\n\n**Tu copago de Urología (Plan Bronce)**\n\nEn el **Hospital Sur**, que está dentro de la red de tu plan:\n- Copago: **45.00 USD**\n- Coaseguro: **40%** (es decir, que además del copago pagas el 40% de lo que cueste la atención)\n- Requiere **referencia** del médico de cabecera: sí\n- Requiere **preautorización** de la aseguradora: sí\n\nY ojo con esto último: en el Plan Bronce **toda consulta de especialidad** necesita referencia y preautorización, no solo urología. Además tu plan tiene un **deducible anual de 900 USD** (una cantidad que pagas tú de tu bolsillo antes de que el seguro empiece a cubrir), que se aplica a todo lo que no sea consulta de medicina general.\n\n**Solo como comparación, lo que costaría con el Plan Oro** (que no es el tuyo):\n- En el Hospital Sur serían **12.00 USD** de copago y **0%** de coaseguro.\n- En el Hospital Central serían **20.00 USD** de copago y **0%** de coaseguro.\n\nEl Hospital Central, por cierto, **no forma parte de la red del Plan Bronce**, así que no puedes usarlo con tu póliza.\n\n**Un dato que me falta:** ¿te atiendes en el Hospital Sur o en otro centro? En lo que he encontrado, el Hospital Sur es el que aparece con Urología dentro de tu red, pero puedo buscar en otros hospitales por si te viene mejor otro.\n\n*Fuentes: `documentos/insumos/polizas/plan-bronce.md`, secciones \"Tabla de beneficios\", \"Condiciones generales\" y \"Red de proveedores\"; `documentos/insumos/hospitales/hospital-sur.md`, sección \"Cartera de servicios\"; y para la comparación, `documentos/insumos/polizas/plan-oro.md`, sección \"Tabla de beneficios\".*",
+    "tokens": 9750,
+    "fallo": null,
+    "problemas": []
+  },
+  {
+    "pregunta": {
+      "id": "12-hospital-fuera-red",
+      "paciente": "carmen",
+      "texto": "cuanto pago en el Hospital Central?",
+      "espera": "el Central no esta en su red",
+      "debeContener": [
+        "central"
+      ],
+      "alguno": [
+        "no esta en",
+        "fuera de la red",
+        "no forma parte",
+        "no pertenece",
+        "no esta dentro"
+      ]
+    },
+    "modelo": "alibaba/qwen3.8-max-0902",
+    "llamadas": [
+      {
+        "consulta": "copago y coaseguro en el Hospital Central para mi plan",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Hospital Central dirección horarios especialidades",
+        "tipo": "hospital",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce copago Hospital Central distrito Centro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce Cardiologia Hospital Central copago coaseguro",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce Urgencias Hospital Central copago coaseguro requiere referencia",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "Plan Bronce red de hospitales incluidos Hospital Central fuera de red",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "cuanto pago por Medicina General en el Hospital Central",
+        "tipo": "cobertura",
+        "alcance": "mi_plan"
+      },
+      {
+        "consulta": "atención fuera de la red del Plan Bronce reembolso coste completo",
+        "tipo": "condicion",
+        "alcance": "mi_plan"
+      }
+    ],
+    "respuesta": "Carmen, tengo que darte una respuesta clara antes que una cifra: **el Hospital Central no forma parte de la red de tu Plan Bronce**, así que no existe un copago ni un coaseguro (el porcentaje del gasto que pagas tú después de atenderte) para ese centro. No encuentro ese dato porque no está en tu póliza.\n\nLo que sí dice tu póliza:\n\n- \"El Hospital Central no forma parte de la red del Plan Bronce. Esto implica que las especialidades que solo se prestan en ese centro, como Cardiologia, no estan disponibles dentro de la red de este plan.\"\n- Sobre Cardiología en concreto: \"El asegurado que requiera Cardiologia debe asumir el coste completo o solicitar un cambio de plan.\"\n- Y sobre urgencias: \"La atencion de urgencia fuera de la red no genera reembolso en ningun caso.\"\n\nO sea: si te atiendes en el Hospital Central, el coste corre por tu cuenta y no hay devolución posterior, ni siquiera en urgencias.\n\n**Tus alternativas dentro de la red**, con los importes tal como aparecen en tu póliza:\n\n| Servicio | Hospital Sur | Clínica Norte |\n|---|---|---|\n| Medicina General | Copago 15.00 USD, coaseguro 0% | Copago 20.00 USD, coaseguro 0% |\n| Urgencias | Copago 45.00 USD, coaseguro 20% | Copago 60.00 USD, coaseguro 20% |\n\nTen en cuenta que el Hospital Central es el único centro de la red con unidad de hemodinamia y cuidados intensivos cardiológicos, y que su urgencias abre 24 horas todos los días; el Hospital Sur solo atiende urgencias de 7:00 a 19:00.\n\nDime qué especialidad o qué molestia te lleva a querer ir al Hospital Central y te busco quién te lo puede atender dentro de tu red y cuánto pagarías ahí.\n\n**Fuentes:** `documentos/insumos/polizas/plan-bronce.md`, secciones \"Red de proveedores\", \"Especialidades no disponibles en red\", \"Condiciones generales\" y \"Tabla de beneficios\"; `documentos/insumos/hospitales/hospital-central.md`, secciones \"Sobre el centro\" y \"Cartera de servicios\"; `documentos/insumos/hospitales/hospital-sur.md`, sección \"Cartera de servicios\".",
+    "tokens": 42597,
+    "fallo": null,
+    "problemas": []
+  }
+]

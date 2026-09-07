@@ -1,6 +1,6 @@
 import type { JSONValue } from "ai";
 
-export const CHAT_MODEL = "openai/gpt-5-nano";
+export const CHAT_MODEL = "alibaba/qwen3.8-flash";
 
 export const EMBEDDING_MODEL = "openai/text-embedding-3-small";
 

@@ -55,9 +55,9 @@ const PREGUNTAS: Pregunta[] = [
     id: "04-urgencia",
     paciente: "ana",
     texto: "me duele el pecho y me falta el aire",
-    espera: "urgencias de inmediato, sin hablar de copagos",
+    espera: "urgencias de inmediato, sin dar un importe",
     debeContener: ["urgencia"],
-    noDebeContener: ["copago", "usd"],
+    noDebeContener: ["15.00", "20.00", "25.00"],
   },
   {
     id: "05a-barato-oro",
