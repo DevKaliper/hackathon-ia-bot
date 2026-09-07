@@ -25,3 +25,7 @@ yarn-error.log*
 /playwright/*
 next-env.d.ts
 tsconfig.tsbuildinfo
+
+# rag starter
+.yarn/install-state.gz
+*.tsbuildinfo
